@@ -7,14 +7,14 @@ Alto is still being developed. A stable version will be released very soon. Star
 
 ## Aims
 Alto was developed to be:
-- `Readable`
+- **Readable**
 
  ```Swift
 //  The top left of myView should equal the top right of view
 layout.make(the: .TopLeft, of(myView), .EqualTo, the: .TopRight, of(view))
 ```
 
-- `Compile Safe`
+- **Compile Safe**
 
  ```Swift
 // This compiles but causes the app to crash
@@ -26,30 +26,30 @@ NSLayoutConstraint(item: myView, attribute: .Height, relatedBy: .Equal, toItem:
 layout.make(the: .Height, of(myView), .EqualTo, the: .LeadingMargin, of(view)) <-- Error
 ```
 
-- `Simple`
+- **Simple**
 
  Alto has a small API with no operator overloads or extra properties on `UIView`
  ```Swift
 layout.make(the: .Edges, of(myView), .EqualTo, the: .Edges, of(containerView))
 ```
 
-- `Well Documented` View the examples and diagrams [here]()
+- **Well Documented** View the examples and diagrams [here]()
 
 ## Features
 
-- `Extra Attributes` Including `.Center`, `.Size`, `.Edges`, `.TopLeft`. See the full list [here]()
+- **Extra Attributes** Including `.Center`, `.Size`, `.Edges`, `.TopLeft`. See the full list [here]()
 
  ```Swift
 layout.make(the: .Size, of(titleLabel), .EqualTo, the: .Size, of(containerView))
 ```
 
-- `View Grouping` Apply the same constraints to many views
+- **View Grouping** Apply the same constraints to many views
 
  ```Swift
 layout.make(the: .Left, of(titleLabel, detailLabel), .EqualTo, the: .Left, of(containerView))
 ```
 
-- `Clear Priorities`
+- **Clear Priorities**
  ```Swift
 // Use make for required constraints
 layout.make(the: .Top, of(titleLabel, detailLabel), .EqualTo, the: .Top, of(containerView))
@@ -63,18 +63,18 @@ layout.tryTo.make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(contain
 layout.tryToWithPriority(.Low).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
 ```
 
-- `Size Classes` Alto applies constraints for particular size classes for you
+- **Size Classes** Alto applies constraints for particular size classes for you
 
  ```Swift
 // Constraint only applied when on compact width
 layout.when(.CompactWidth).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
 ```
-- `Layout Guide Support`
+- **Layout Guide Support**
 
  ```Swift
 layout.make(the: .Top, of(titleLabel), .EqualTo, the: .Bottom, of(layoutGuide))
 ```
-- `Animation` Constraint switching and animation is simple
+- **Animation** Constraint switching and animation is simple
 
 ## Resources
 - [Examples and Diagrams]()
