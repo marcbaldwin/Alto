@@ -49,6 +49,14 @@ layout.make(the: .Size, of(titleLabel), .EqualTo, the: .Size, of(containerView))
 layout.make(the: .Left, of(titleLabel, detailLabel), .EqualTo, the: .Left, of(containerView))
 ```
 
+- **Stack Layouts** Create [`UIStackView`](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/#//apple_ref/occ/instp/UIStackView/) style layouts
+
+ ```Swift
+layout.stack(.LeftToRight, withSpacing: 10, titleLabel, detailLabel, dateLabel)
+layout.stack(.LeadingToTrailing, withSpacing: 10, titleLabel, detailLabel, dateLabel)
+layout.stack(.TopToBottom, withSpacing: 10, titleLabel, detailLabel, dateLabel)
+```
+
 - **Clear Priorities**
  ```Swift
 // Use make for required constraints
