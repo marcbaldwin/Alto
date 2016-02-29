@@ -8,7 +8,7 @@ Alto was developed to be:
 
  ```Swift
 //  The top left of myView should equal the top right of view
-layout.make(.TopLeft, of(myView)).toEqual(.TopRight, of(view))
+layout.make(the: .TopLeft, of(myView), .EqualTo, the: .TopRight, of(view))
 ```
 
 - `Compile Safe`
@@ -20,14 +20,14 @@ NSLayoutConstraint(item: myView, attribute: .Height, relatedBy: .Equal, toItem:
 ```
  ```Swift
 // This does not compile :)
-layout.make(.Height, of(myView)).equalTo(.LeadingMargin, of(view)) <-- Error
+layout.make(the: .Height, of(myView), .EqualTo, the: .LeadingMargin, of(view)) <-- Error
 ```
 
 - `Simple`
 
  Alto has a small API with no operator overloads or extra properties on `UIView`
  ```Swift
-layout.make(.Edges, of(myView)).equalTo(.Edges, of(containerView))
+layout.make(the: .Edges, of(myView), .EqualTo, the: .Edges, of(containerView))
 ```
 
 - `Well Documented` View the examples and diagrams [here]()
@@ -37,39 +37,39 @@ layout.make(.Edges, of(myView)).equalTo(.Edges, of(containerView))
 - `Extra Attributes` Including `.Center`, `.Size`, `.Edges`, `.TopLeft`. See the full list [here]()
 
  ```Swift
-layout.make(.Size, of(titleLabel)).equalTo(.Size, of(containerView))
+layout.make(the: .Size, of(titleLabel), .EqualTo, the: .Size, of(containerView))
 ```
 
 - `View Grouping` Apply the same constraints to many views
 
  ```Swift
-layout.make(.Left, of(titleLabel, detailLabel)).equalTo(.Left, of(containerView))
+layout.make(the: .Left, of(titleLabel, detailLabel), .EqualTo, the: .Left, of(containerView))
 ```
 
 - `Clear Priorities`
  ```Swift
 // Use make for required constraints
-layout.make(.Top, of(titleLabel, detailLabel)).equalTo(.Top, of(containerView))
+layout.make(the: .Top, of(titleLabel, detailLabel), .EqualTo, the: .Top, of(containerView))
 ```
  ```Swift
 // Use tryTo for optional constraints
-layout.tryTo.make(.Width, of(titleLabel)).equalTo(.Width, of(containerView))
+layout.tryTo.make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
 ```
  ```Swift
 // Use tryToWithPriority to prioritize constraints
-layout.tryToWithPriority(.Low).make(.Width, of(titleLabel)).equalTo(.Width, of(containerView))
+layout.tryToWithPriority(.Low).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
 ```
 
 - `Size Classes` Alto applies constraints for particular size classes for you
 
  ```Swift
 // Constraint only applied when on compact width
-layout.when(.CompactWidth).make(.Width, of(titleLabel)).equalTo(.Width, of(containerView))
+layout.when(.CompactWidth).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
 ```
 - `Layout Guide Support`
 
  ```Swift
-layout.make(.Top, of(titleLabel)).equalTo(.Bottom, of(layoutGuide))
+layout.make(the: .Top, of(titleLabel), .EqualTo, the: .Bottom, of(layoutGuide))
 ```
 - `Animation` Constraint switching and animation is simple
 
