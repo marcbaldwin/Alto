@@ -2,6 +2,9 @@
 # Alto
 Alto helps developers create layouts that support every device and orientation.
 
+## Under Development
+Alto is still being developed. A stable version will be released very soon. Star or Watch to keep updated with the progress :)
+
 ## Aims
 Alto was developed to be:
 - `Readable`
