@@ -24,7 +24,7 @@ public struct MultiplierOffset<T> {
 // MARK: Attributes
 
 public enum Horizontal {
-    case centerX, left, right
+    case centerX, left, right, leading, trailing
 }
 
 extension Horizontal: SingleOffset, SingleAttribute {
@@ -34,6 +34,8 @@ extension Horizontal: SingleOffset, SingleAttribute {
         case .centerX: return .centerX
         case .left: return .left
         case .right: return .right
+        case .leading: return .leading
+        case .trailing: return .trailing
         }
     }
 }
@@ -191,7 +193,7 @@ extension QuadrupleOffset {
 // MARK: Stack
 
 public enum Stack {
-    case vertically, horizontally
+    case vertically, horizontally, leadingToTrailing
 }
 
 extension Stack: DoubleAttribute {
@@ -199,6 +201,7 @@ extension Stack: DoubleAttribute {
     var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) {
         switch self {
         case .horizontally: return (.left, .right)
+        case .leadingToTrailing: return (.leading, .trailing)
         case .vertically: return (.top, .bottom)
         }
     }
