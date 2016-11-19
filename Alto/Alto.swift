@@ -159,6 +159,7 @@ public protocol DoubleOffset {
 
     static func *(attribute: Self, multiplier: CGFloat) -> MultiplierOffset<Self>
     static func +(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self>
+    static func -(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self>
 }
 
 extension DoubleOffset {
@@ -169,6 +170,10 @@ extension DoubleOffset {
 
     public static func +(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self> {
         return MultiplierOffset(attribute: attribute, offset: offset)
+    }
+
+    public static func -(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self> {
+        return MultiplierOffset(attribute: attribute, offset: -offset)
     }
 }
 
