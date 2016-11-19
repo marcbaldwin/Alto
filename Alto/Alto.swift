@@ -108,7 +108,7 @@ public enum Edges {
     case edges
 }
 
-extension Edges: QuadrupleAttribute {
+extension Edges: QuadrupleOffset, QuadrupleAttribute {
 
     var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute) {
         switch self {
@@ -181,12 +181,17 @@ protocol QuadrupleAttribute {
 public protocol QuadrupleOffset {
 
     static func +(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self>
+    static func -(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self>
 }
 
 extension QuadrupleOffset {
 
     public static func +(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self> {
         return MultiplierOffset(attribute: attribute, offset: offset)
+    }
+
+    public static func -(attribute: Self, offset: CGFloat) -> MultiplierOffset<Self> {
+        return MultiplierOffset(attribute: attribute, offset: -offset)
     }
 }
 
