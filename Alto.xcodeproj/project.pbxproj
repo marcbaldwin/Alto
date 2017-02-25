@@ -13,6 +13,14 @@
 		A0AAF8921D91E3E7000B05D2 /* Alto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AAF8911D91E3E7000B05D2 /* Alto.swift */; };
 		A0AAF8951D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AAF8941D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift */; };
 		A0AAF8971D91E479000B05D2 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AAF8961D91E479000B05D2 /* Layout.swift */; };
+		A0C025E31E60DFE3004A0F48 /* Horizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025E21E60DFE3004A0F48 /* Horizontal.swift */; };
+		A0C025E61E60E075004A0F48 /* Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025E51E60E075004A0F48 /* Vertical.swift */; };
+		A0C025E91E60E239004A0F48 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025E81E60E239004A0F48 /* Size.swift */; };
+		A0C025EB1E60E2A3004A0F48 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025EA1E60E2A3004A0F48 /* Position.swift */; };
+		A0C025ED1E60E399004A0F48 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025EC1E60E399004A0F48 /* Edges.swift */; };
+		A0C025EF1E60E44C004A0F48 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025EE1E60E44C004A0F48 /* Stack.swift */; };
+		A0C025F11E60E4CA004A0F48 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025F01E60E4CA004A0F48 /* Dimension.swift */; };
+		A0C025F31E60E5B8004A0F48 /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C025F21E60E5B8004A0F48 /* AspectRatio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,14 @@
 		A0AAF8911D91E3E7000B05D2 /* Alto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alto.swift; sourceTree = "<group>"; };
 		A0AAF8941D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Alto.swift"; sourceTree = "<group>"; };
 		A0AAF8961D91E479000B05D2 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		A0C025E21E60DFE3004A0F48 /* Horizontal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horizontal.swift; sourceTree = "<group>"; };
+		A0C025E51E60E075004A0F48 /* Vertical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertical.swift; sourceTree = "<group>"; };
+		A0C025E81E60E239004A0F48 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		A0C025EA1E60E2A3004A0F48 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A0C025EC1E60E399004A0F48 /* Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edges.swift; sourceTree = "<group>"; };
+		A0C025EE1E60E44C004A0F48 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		A0C025F01E60E4CA004A0F48 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		A0C025F21E60E5B8004A0F48 /* AspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +93,12 @@
 		A0AAF8791D91E375000B05D2 /* Alto */ = {
 			isa = PBXGroup;
 			children = (
+				A0C025E71E60E226004A0F48 /* Constraints */,
 				A0AAF87A1D91E375000B05D2 /* Alto.h */,
-				A0AAF87B1D91E375000B05D2 /* Info.plist */,
 				A0AAF8911D91E3E7000B05D2 /* Alto.swift */,
 				A0AAF8941D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift */,
 				A0AAF8961D91E479000B05D2 /* Layout.swift */,
+				A0C025E41E60E060004A0F48 /* Resources */,
 			);
 			path = Alto;
 			sourceTree = "<group>";
@@ -93,6 +110,29 @@
 				A0AAF8871D91E375000B05D2 /* Info.plist */,
 			);
 			path = AltoTests;
+			sourceTree = "<group>";
+		};
+		A0C025E41E60E060004A0F48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0AAF87B1D91E375000B05D2 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A0C025E71E60E226004A0F48 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				A0C025F21E60E5B8004A0F48 /* AspectRatio.swift */,
+				A0C025F01E60E4CA004A0F48 /* Dimension.swift */,
+				A0C025EC1E60E399004A0F48 /* Edges.swift */,
+				A0C025E21E60DFE3004A0F48 /* Horizontal.swift */,
+				A0C025EA1E60E2A3004A0F48 /* Position.swift */,
+				A0C025E81E60E239004A0F48 /* Size.swift */,
+				A0C025EE1E60E44C004A0F48 /* Stack.swift */,
+				A0C025E51E60E075004A0F48 /* Vertical.swift */,
+			);
+			name = Constraints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +248,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C025EB1E60E2A3004A0F48 /* Position.swift in Sources */,
+				A0C025EF1E60E44C004A0F48 /* Stack.swift in Sources */,
 				A0AAF8921D91E3E7000B05D2 /* Alto.swift in Sources */,
+				A0C025E31E60DFE3004A0F48 /* Horizontal.swift in Sources */,
 				A0AAF8951D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift in Sources */,
 				A0AAF8971D91E479000B05D2 /* Layout.swift in Sources */,
+				A0C025E91E60E239004A0F48 /* Size.swift in Sources */,
+				A0C025ED1E60E399004A0F48 /* Edges.swift in Sources */,
+				A0C025F11E60E4CA004A0F48 /* Dimension.swift in Sources */,
+				A0C025F31E60E5B8004A0F48 /* AspectRatio.swift in Sources */,
+				A0C025E61E60E075004A0F48 /* Vertical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
