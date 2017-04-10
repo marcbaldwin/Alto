@@ -26,6 +26,10 @@ public class Layout {
         layout.constraints += constraints
     }
 
+    public static func +=(layout: Layout, constraint: NSLayoutConstraint) {
+        layout.constraints += [constraint]
+    }
+
     public subscript(key: LayoutKey) -> Layout {
         if let subLayout = sublayouts[key.layoutKey] {
             return subLayout
