@@ -1,14 +1,6 @@
 import UIKit
 
-public protocol LayoutKey {
-
-    var layoutKey: String { get }
-}
-
-extension String: LayoutKey {
-
-    public var layoutKey: String { return self }
-}
+public typealias LayoutKey = String
 
 public class Layout {
 
@@ -31,11 +23,11 @@ public class Layout {
     }
 
     public subscript(key: LayoutKey) -> Layout {
-        if let subLayout = sublayouts[key.layoutKey] {
+        if let subLayout = sublayouts[key] {
             return subLayout
         } else {
             let sublayout = Layout()
-            sublayouts[key.layoutKey] = sublayout
+            sublayouts[key] = sublayout
             return sublayout
         }
     }
@@ -57,7 +49,6 @@ public class Layout {
     }
 
     private func sublayouts(_ keys: [LayoutKey]) -> [Layout] {
-        let layoutKeys = keys.map { $0.layoutKey }
-        return sublayouts.filter { layoutKeys.contains($0.key) } .map { $0.value }
+        return sublayouts.filter { keys.contains($0.key) } .map { $0.value }
     }
 }
