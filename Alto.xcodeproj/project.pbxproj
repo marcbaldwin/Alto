@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */; };
+		A02C05B31E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */; };
+		A02C05B41E9D5FD9006F36D3 /* ConstraintBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */; };
 		A0AAF8811D91E375000B05D2 /* Alto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AAF8771D91E375000B05D2 /* Alto.framework */; };
 		A0AAF8861D91E375000B05D2 /* AltoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AAF8851D91E375000B05D2 /* AltoTests.swift */; };
 		A0AAF8881D91E375000B05D2 /* Alto.h in Headers */ = {isa = PBXBuildFile; fileRef = A0AAF87A1D91E375000B05D2 /* Alto.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedCollectionViewCell.swift; sourceTree = "<group>"; };
+		A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedTableViewCell.swift; sourceTree = "<group>"; };
+		A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedView.swift; sourceTree = "<group>"; };
 		A0AAF8771D91E375000B05D2 /* Alto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AAF87A1D91E375000B05D2 /* Alto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alto.h; sourceTree = "<group>"; };
 		A0AAF87B1D91E375000B05D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A02C05AE1E9D5F70006F36D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */,
+				A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */,
+				A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A0AAF86D1D91E375000B05D2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +109,7 @@
 		A0AAF8791D91E375000B05D2 /* Alto */ = {
 			isa = PBXGroup;
 			children = (
+				A02C05AE1E9D5F70006F36D3 /* Views */,
 				A0C025E71E60E226004A0F48 /* Constraints */,
 				A0AAF87A1D91E375000B05D2 /* Alto.h */,
 				A0AAF8911D91E3E7000B05D2 /* Alto.swift */,
@@ -253,12 +270,15 @@
 				A0AAF8921D91E3E7000B05D2 /* Alto.swift in Sources */,
 				A0C025E31E60DFE3004A0F48 /* Horizontal.swift in Sources */,
 				A0AAF8951D91E41B000B05D2 /* NSLayoutConstraint+Alto.swift in Sources */,
+				A02C05B31E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift in Sources */,
 				A0AAF8971D91E479000B05D2 /* Layout.swift in Sources */,
 				A0C025E91E60E239004A0F48 /* Size.swift in Sources */,
 				A0C025ED1E60E399004A0F48 /* Edges.swift in Sources */,
 				A0C025F11E60E4CA004A0F48 /* Dimension.swift in Sources */,
+				A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */,
 				A0C025F31E60E5B8004A0F48 /* AspectRatio.swift in Sources */,
 				A0C025E61E60E075004A0F48 /* Vertical.swift in Sources */,
+				A02C05B41E9D5FD9006F36D3 /* ConstraintBasedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
