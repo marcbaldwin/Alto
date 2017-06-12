@@ -16,34 +16,41 @@ extension Dimension: SingleOffset, SingleAttribute {
 
 public extension UIView {
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ view: UIView, _ anotherAttribute: Dimension, priority: Priority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        return NSLayoutConstraint(self, attribute, relation, view, anotherAttribute, priority: priority, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Dimension, _ relation: Relation, _ view: UIView, _ attr2: Dimension, priority: Priority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
+        return NSLayoutConstraint(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ view: UIView, _ anotherAttribute: MultiplierOffset<Dimension>, priority: Priority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        return NSLayoutConstraint(self, attribute, relation, view, anotherAttribute, priority: priority, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Dimension, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<Dimension>, priority: Priority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
+        return NSLayoutConstraint(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ constant: CGFloat, isActive: Bool = true) -> NSLayoutConstraint {
-        return NSLayoutConstraint(self, attribute, relation, constant, isActive: isActive)
+    @discardableResult
+    public func set(_ attr: Dimension, _ relation: Relation, _ constant: CGFloat, priority: Priority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
+        return NSLayoutConstraint(self, attr, relation, constant, priority: priority, isActive: isActive)
     }
 }
 
 public extension Array where Element: UIView {
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ view: UIView, _ anotherAttribute: Dimension, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attribute, relation, view, anotherAttribute, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Dimension, _ relation: Relation, _ view: UIView, _ attr2: Dimension, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ view: UIView, _ anotherAttribute: MultiplierOffset<Dimension>, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attribute, relation, view, anotherAttribute, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Dimension, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<Dimension>, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(_ attribute: Dimension, _ relation: Relation, _ constant: CGFloat, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attribute, relation, constant, isActive: isActive)
+    @discardableResult
+    public func set(_ attr: Dimension, _ relation: Relation, _ constant: CGFloat, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.create(self, attr, relation, constant, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(same attribute: Dimension, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return dropLast(1).flatMap { $0.set(attribute, .equalTo, last!, attribute, isActive: isActive) }
+    @discardableResult
+    public func set(same attr: Dimension, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return dropLast(1).flatMap { $0.set(attr, .equalTo, last!, attr, priority: priority, isActive: isActive) }
     }
 }

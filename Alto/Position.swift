@@ -24,22 +24,26 @@ extension Position: DoubleOffset, DoubleAttribute {
 
 public extension UIView {
 
-    @discardableResult public func set(_ attribute: Position, _ relation: Relation, _ view: UIView, _ anotherAttribute: Position, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attribute, relation, view, anotherAttribute, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Position, _ relation: Relation, _ view: UIView, _ attr2: Position, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 
-    @discardableResult public func set(_ attribute: Position, _ relation: Relation, _ view: UIView, _ anotherAttribute: MultiplierOffset<Position>, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attribute, relation, view, anotherAttribute, isActive: isActive)
+    @discardableResult
+    public func set(_ attr1: Position, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<Position>, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
     }
 }
 
 public extension Array where Element: UIView {
 
-    @discardableResult public func set(_ attribute: Position, _ relation: Relation, _ view: UIView, _ anotherAttribute: Position, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return flatMap { $0.set(attribute, relation, view, anotherAttribute, isActive: isActive) }
+    @discardableResult
+    public func set(_ attr1: Position, _ relation: Relation, _ view: UIView, _ attr2: Position, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return flatMap { $0.set(attr1, relation, view, attr2, priority: priority, isActive: isActive) }
     }
 
-    @discardableResult public func set(_ attribute: Position, _ relation: Relation, _ view: UIView, _ anotherAttribute: MultiplierOffset<Position>, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return flatMap { $0.set(attribute, relation, view, anotherAttribute, isActive: isActive) }
+    @discardableResult
+    public func set(_ attr1: Position, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<Position>, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+        return flatMap { $0.set(attr1, relation, view, attr2, priority: priority, isActive: isActive) }
     }
 }
