@@ -1,88 +1,82 @@
 
 # Alto
-Alto helps developers create layouts that support every device and orientation.
+Create layouts that support every device and orientation.
 
 ## Under Development
 Alto is still being developed. A stable version will be released very soon. Star or Watch to keep updated with the progress :)
 
 ## Aims
 Alto was developed to be:
-- **Readable**
 
- ```Swift
-//  The top left of myView should equal the top right of view
-layout.make(the: .TopLeft, of(myView), .EqualTo, the: .TopRight, of(view))
+#### Readable
+
+```Swift
+// Align the center of titleLabel 40px from the top of the container
+titleLabel.set(.centerY, .equalTo, containerView, .top + 40)
+
+// Align the centers of titleLabel and subtitleLabel to the container
+[titleLabel, subtitleLabel].set(.centerX, .equalTo, containerView, .centerX)
 ```
 
-- **Compile Safe**
+#### Compile Safe
 
- ```Swift
-// This compiles but causes the app to crash
-NSLayoutConstraint(item: myView, attribute: .Height, relatedBy: .Equal, toItem:
-        view, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0)
+This compiles but will cause a crash
+```Swift
+NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem:
+containerView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
 ```
- ```Swift
-// This does not compile :)
-layout.make(the: .Height, of(myView), .EqualTo, the: .LeadingMargin, of(view)) <-- Error
-```
-
-- **Simple**
-
- Alto has a small API with no operator overloads or extra properties on `UIView`
- ```Swift
-layout.make(the: .Edges, of(myView), .EqualTo, the: .Edges, of(containerView))
+This does not compile :)
+```Swift
+titleLabel.set(.height, .equalTo, containerView, .centerX) <-- Error
 ```
 
-- **Well Documented** View the examples and diagrams [here]()
+#### Fast and Simple
+
+1. Small API
+- Convenience attributes to reduce code needed, see features
+- **No operator overloads** which can increase compile time
+
+#### Well Documented
+View the examples and diagrams [coming soon]()
 
 ## Features
 
-- **Extra Attributes** Including `.Center`, `.Size`, `.Edges`, `.TopLeft`. See the full list [here]()
+#### Extra Attributes
 
- ```Swift
-layout.make(the: .Size, of(titleLabel), .EqualTo, the: .Size, of(containerView))
+Such as: `.center`, `.size`, `.edges`, `.topLeft`
+
+```Swift
+titleLabel.set(.center, .equalTo, containerView, .center)
+titleLabel.set(.topLeft, .equalTo, containerView, .bottomRight)
+titleLabel.set(.edges, .equalTo, containerView, .edges - 5)
 ```
 
-- **View Grouping** Apply the same constraints to many views
+#### View Grouping
 
- ```Swift
-layout.make(the: .Left, of(titleLabel, detailLabel), .EqualTo, the: .Left, of(containerView))
+Apply the same constraints to many views
+
+```Swift
+[titleLabel, subtitleLabel].set(.center, .equalTo, containerView, .center)
 ```
 
-- **Stack Layouts** Create [`UIStackView`](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/#//apple_ref/occ/instp/UIStackView/) style layouts
+#### Stack Layouts
+Create [`UIStackView`](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/#//apple_ref/occ/instp/UIStackView/) style layouts just using constraints
 
- ```Swift
-layout.stack(.LeftToRight, withSpacing: 10, titleLabel, detailLabel, dateLabel)
-layout.stack(.LeadingToTrailing, withSpacing: 10, titleLabel, detailLabel, dateLabel)
-layout.stack(.TopToBottom, withSpacing: 10, titleLabel, detailLabel, dateLabel)
-```
-
-- **Clear Priorities**
- ```Swift
-// Use make for required constraints
-layout.make(the: .Top, of(titleLabel, detailLabel), .EqualTo, the: .Top, of(containerView))
-```
- ```Swift
-// Use tryTo for optional constraints
-layout.tryTo.make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
-```
- ```Swift
-// Use tryToWithPriority to prioritize constraints
-layout.tryToWithPriority(.Low).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
+```Swift
+views.stack(.vertically, margin: 20)
+views.stack(.vertically, in: containerView, margin: 20)
 ```
 
-- **Size Classes** Alto applies constraints for particular size classes for you
+#### Clear Priorities
 
- ```Swift
-// Constraint only applied when on compact width
-layout.when(.CompactWidth).make(the: .Width, of(titleLabel), .EqualTo, the: .Width, of(containerView))
+```Swift
+titleLabel.set(.width, .greaterThanOrEqualTo, containerView, .width, priority: .low)
 ```
-- **Layout Guide Support**
 
- ```Swift
-layout.make(the: .Top, of(titleLabel), .EqualTo, the: .Bottom, of(layoutGuide))
-```
-- **Animation** Constraint switching and animation is simple
+#### Todo List
+
+1. Size Classes
+2. Layout Guide Support
 
 ## Resources
 - [Examples and Diagrams]()
