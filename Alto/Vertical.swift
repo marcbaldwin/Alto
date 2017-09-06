@@ -1,7 +1,7 @@
 import Foundation
 
 public enum Vertical {
-    case centerY, top, bottom
+    case centerY, top, bottom, lastBaseline
 }
 
 extension Vertical: SingleOffset, SingleAttribute {
@@ -11,6 +11,7 @@ extension Vertical: SingleOffset, SingleAttribute {
         case .centerY: return .centerY
         case .top: return .top
         case .bottom: return .bottom
+        case .lastBaseline: return .lastBaseline
         }
     }
 }
