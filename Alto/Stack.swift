@@ -1,7 +1,7 @@
 import Foundation
 
 public enum Stack {
-    case vertically, horizontally, leadingToTrailing
+    case vertically, verticallyToBaseline, horizontally, leadingToTrailing
 }
 
 extension Stack: DoubleAttribute {
@@ -11,6 +11,7 @@ extension Stack: DoubleAttribute {
         case .horizontally: return (.left, .right)
         case .leadingToTrailing: return (.leading, .trailing)
         case .vertically: return (.top, .bottom)
+        case .verticallyToBaseline: return (.top, .lastBaseline)
         }
     }
 }
