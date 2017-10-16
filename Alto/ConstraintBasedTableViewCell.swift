@@ -10,7 +10,10 @@ open class ConstraintBasedTableViewCell: UITableViewCell {
         initView()
     }
 
-    required public init?(coder aDecoder: NSCoder) { fatalError() }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initView()
+    }
 
     override open func updateConstraints() {
         if !hasInitConstraints {

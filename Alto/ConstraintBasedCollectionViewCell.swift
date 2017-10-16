@@ -5,12 +5,15 @@ open class ConstraintBasedCollectionViewCell: UICollectionViewCell {
     public var boundObjectId: String?
     public var hasInitConstraints = false
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         initView()
     }
 
-    required public init?(coder aDecoder: NSCoder) { fatalError() }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initView()
+    }
 
     override open func updateConstraints() {
         if !hasInitConstraints {
@@ -42,7 +45,10 @@ open class ConstraintBasedCollectionReusableView: UICollectionReusableView {
         initView()
     }
 
-    required public init?(coder aDecoder: NSCoder) { fatalError() }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initView()
+    }
 
     override open func updateConstraints() {
         if !hasInitConstraints {
