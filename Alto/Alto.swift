@@ -126,10 +126,10 @@ public enum Relation {
 public enum Priority {
     case low, high
 
-    var value: Float {
+    var value: UILayoutPriority {
         switch self {
-        case .low: return UILayoutPriorityDefaultLow
-        case .high: return UILayoutPriorityDefaultHigh
+        case .low: return .defaultLow
+        case .high: return .defaultHigh
         }
     }
 }
@@ -141,15 +141,15 @@ extension NSLayoutConstraint {
     // MARK: Single Attribute
 
     convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ constant: CGFloat, priority: Priority?, isActive: Bool) {
-        self.init(view, attr1.nsAttribute, relation.nsRelation, nil, .notAnAttribute, 1, constant, priority: priority, isActive: isActive)
+        self.init(view, attr1.nsAttribute, relation.nsRelation, nil, .notAnAttribute, 1, constant, priority: priority?.value, isActive: isActive)
     }
 
     convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ view2: AnyObject, _ attr2: T, priority: Priority?, isActive: Bool) {
-        self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.nsAttribute, 1, 0, priority: priority, isActive: isActive)
+        self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.nsAttribute, 1, 0, priority: priority?.value, isActive: isActive)
     }
 
     convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ view2: AnyObject, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) {
-        self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.attribute.nsAttribute, attr2.multiplier, attr2.offset, priority: priority, isActive: isActive)
+        self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.attribute.nsAttribute, attr2.multiplier, attr2.offset, priority: priority?.value, isActive: isActive)
     }
 
     static func create<T: SingleAttribute>(_ views: [UIView], _ attribute: T, _ relation: Relation, _ constant: CGFloat, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
@@ -168,8 +168,8 @@ extension NSLayoutConstraint {
 
     static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return [
-            NSLayoutConstraint(view1, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, c, priority: priority, isActive: isActive),
-            NSLayoutConstraint(view1, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, c, priority: priority, isActive: isActive)
+            NSLayoutConstraint(view1, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, c, priority: priority?.value, isActive: isActive),
+            NSLayoutConstraint(view1, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, c, priority: priority?.value, isActive: isActive)
         ]
     }
 
@@ -181,10 +181,10 @@ extension NSLayoutConstraint {
 
     static func create<T: QuadrupleAttribute>(_ view: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return [
-            NSLayoutConstraint(view, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, -c, priority: priority, isActive: isActive),
-            NSLayoutConstraint(view, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, -c, priority: priority, isActive: isActive),
-            NSLayoutConstraint(view, attr1.nsAttributes.2, relation.nsRelation, view2, attr2.nsAttributes.2, m, c, priority: priority, isActive: isActive),
-            NSLayoutConstraint(view, attr1.nsAttributes.3, relation.nsRelation, view2, attr2.nsAttributes.3, m, c, priority: priority, isActive: isActive)
+            NSLayoutConstraint(view, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, -c, priority: priority?.value, isActive: isActive),
+            NSLayoutConstraint(view, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, -c, priority: priority?.value, isActive: isActive),
+            NSLayoutConstraint(view, attr1.nsAttributes.2, relation.nsRelation, view2, attr2.nsAttributes.2, m, c, priority: priority?.value, isActive: isActive),
+            NSLayoutConstraint(view, attr1.nsAttributes.3, relation.nsRelation, view2, attr2.nsAttributes.3, m, c, priority: priority?.value, isActive: isActive)
         ]
     }
 
