@@ -152,18 +152,6 @@ extension NSLayoutConstraint {
         self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.attribute.nsAttribute, attr2.multiplier, attr2.offset, priority: priority?.value, isActive: isActive)
     }
 
-    static func create<T: SingleAttribute>(_ views: [UIView], _ attribute: T, _ relation: Relation, _ constant: CGFloat, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
-        return views.flatMap { NSLayoutConstraint($0, attribute, relation, constant, priority: priority, isActive: isActive) }
-    }
-
-    static func create<T: SingleAttribute>(_ views: [UIView], _ attr1: T, _ relation: Relation, _ view: UIView, _ attr2: T, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
-        return views.flatMap { NSLayoutConstraint($0, attr1, relation, view, attr2, priority: priority, isActive: isActive) }
-    }
-
-    static func create<T: SingleAttribute>(_ views: [UIView], _ attr1: T, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
-        return views.flatMap { NSLayoutConstraint($0, attr1, relation, view, attr2, priority: priority, isActive: isActive) }
-    }
-
     // MARK: DoubleAttribute
 
     static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {

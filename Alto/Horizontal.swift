@@ -34,11 +34,11 @@ public extension Array where Element: UIView {
 
     @discardableResult
     public func set(_ attr1: Horizontal, _ relation: Relation, _ view: UIView, _ attr2: Horizontal, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
+        return map { $0.set(attr1, relation, view, attr2, priority: priority, isActive: isActive) }
     }
 
     @discardableResult
     public func set(_ attr1: Horizontal, _ relation: Relation, _ view: UIView, _ attr2: MultiplierOffset<Horizontal>, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.create(self, attr1, relation, view, attr2, priority: priority, isActive: isActive)
+        return map { $0.set(attr1, relation, view, attr2, priority: priority, isActive: isActive) }
     }
 }

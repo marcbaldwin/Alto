@@ -16,6 +16,6 @@ public extension Array where Element: UIView {
 
     @discardableResult
     public func set(_ aspectRatio: ConstantAttribute, _ relation: Relation, _ constant: CGFloat, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return flatMap { $0.set(aspectRatio, relation, constant, priority: priority, isActive: isActive) }
+        return map { $0.set(aspectRatio, relation, constant, priority: priority, isActive: isActive) }
     }
 }
