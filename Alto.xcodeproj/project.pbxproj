@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49353CE220CDC9C100B7B2E6 /* AlignmentEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE120CDC9C100B7B2E6 /* AlignmentEdges.swift */; };
+		49353CE420CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE320CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift */; };
+		49353CE620CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE520CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift */; };
 		A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */; };
 		A02C05B31E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */; };
 		A02C05B41E9D5FD9006F36D3 /* ConstraintBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49353CE120CDC9C100B7B2E6 /* AlignmentEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentEdges.swift; sourceTree = "<group>"; };
+		49353CE320CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentEdgesTests.swift; sourceTree = "<group>"; };
+		49353CE520CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Testing.swift"; sourceTree = "<group>"; };
 		A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedTableViewCell.swift; sourceTree = "<group>"; };
 		A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedView.swift; sourceTree = "<group>"; };
@@ -123,8 +129,10 @@
 		A0AAF8841D91E375000B05D2 /* AltoTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0AAF8851D91E375000B05D2 /* AltoTests.swift */,
 				A0AAF8871D91E375000B05D2 /* Info.plist */,
+				49353CE320CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift */,
+				A0AAF8851D91E375000B05D2 /* AltoTests.swift */,
+				49353CE520CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift */,
 			);
 			path = AltoTests;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 		A0C025E71E60E226004A0F48 /* Constraints */ = {
 			isa = PBXGroup;
 			children = (
+				49353CE120CDC9C100B7B2E6 /* AlignmentEdges.swift */,
 				A0C025F21E60E5B8004A0F48 /* AspectRatio.swift */,
 				A0C025F01E60E4CA004A0F48 /* Dimension.swift */,
 				A0C025EC1E60E399004A0F48 /* Edges.swift */,
@@ -276,6 +285,7 @@
 				A0C025E91E60E239004A0F48 /* Size.swift in Sources */,
 				A0C025ED1E60E399004A0F48 /* Edges.swift in Sources */,
 				A0C025F11E60E4CA004A0F48 /* Dimension.swift in Sources */,
+				49353CE220CDC9C100B7B2E6 /* AlignmentEdges.swift in Sources */,
 				A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */,
 				A0C025F31E60E5B8004A0F48 /* AspectRatio.swift in Sources */,
 				A0C025E61E60E075004A0F48 /* Vertical.swift in Sources */,
@@ -287,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49353CE420CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift in Sources */,
 				A0AAF8861D91E375000B05D2 /* AltoTests.swift in Sources */,
+				49353CE620CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
