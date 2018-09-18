@@ -7,7 +7,7 @@ public enum Position {
 
 extension Position: DoubleOffset, DoubleAttribute {
 
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) {
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) {
         switch self {
         case .center: return (.centerX, .centerY)
         case .topLeft: return (.left, .top)

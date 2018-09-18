@@ -6,7 +6,7 @@ public enum Stack {
 
 extension Stack: DoubleAttribute {
 
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) {
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) {
         switch self {
         case .horizontally: return (.left, .right)
         case .leadingToTrailing: return (.leading, .trailing)

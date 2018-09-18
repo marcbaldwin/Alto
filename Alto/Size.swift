@@ -6,7 +6,7 @@ public enum Size {
 
 extension Size: DoubleOffset, DoubleAttribute {
 
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) {
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) {
         switch self {
         case .size: return (.width, .height)
         }

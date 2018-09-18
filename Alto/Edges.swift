@@ -6,7 +6,7 @@ public enum Edges {
 
 extension Edges: QuadrupleOffset, QuadrupleAttribute {
 
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute) {
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) {
         switch self {
         case .edges: return (.left, .top, .right, .bottom)
         }

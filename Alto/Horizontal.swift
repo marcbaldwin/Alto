@@ -6,7 +6,7 @@ public enum Horizontal {
 
 extension Horizontal: SingleOffset, SingleAttribute {
 
-    var nsAttribute: NSLayoutAttribute {
+    var nsAttribute: NSLayoutConstraint.Attribute {
         switch self {
         case .centerX: return .centerX
         case .left: return .left

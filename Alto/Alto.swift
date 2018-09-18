@@ -25,7 +25,7 @@ public struct MultiplierOffset<T> {
 
 protocol SingleAttribute {
 
-    var nsAttribute: NSLayoutAttribute { get }
+    var nsAttribute: NSLayoutConstraint.Attribute { get }
 }
 
 public protocol SingleOffset {
@@ -57,7 +57,7 @@ extension SingleOffset {
 // MARK: Double Attribute
 
 protocol DoubleAttribute {
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) { get }
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) { get }
 }
 
 public protocol DoubleOffset {
@@ -85,7 +85,7 @@ extension DoubleOffset {
 // MARK: Quadruple Attribute
 
 protocol QuadrupleAttribute {
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute, NSLayoutAttribute) { get }
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) { get }
 }
 
 public protocol QuadrupleOffset {
@@ -112,7 +112,7 @@ public enum Relation {
     case lessThanOrEqualTo
     case greaterThanOrEqualTo
 
-    var nsRelation: NSLayoutRelation {
+    var nsRelation: NSLayoutConstraint.Relation {
         switch self {
         case .equalTo: return .equal
         case .lessThanOrEqualTo: return .lessThanOrEqual
@@ -140,34 +140,34 @@ extension NSLayoutConstraint {
 
     // MARK: Single Attribute
 
-    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ constant: CGFloat, priority: Priority?, isActive: Bool) {
+    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Alto.Relation, _ constant: CGFloat, priority: Priority?, isActive: Bool) {
         self.init(view, attr1.nsAttribute, relation.nsRelation, nil, .notAnAttribute, 1, constant, priority: priority?.value, isActive: isActive)
     }
 
-    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ view2: AnyObject, _ attr2: T, priority: Priority?, isActive: Bool) {
+    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Alto.Relation, _ view2: AnyObject, _ attr2: T, priority: Priority?, isActive: Bool) {
         self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.nsAttribute, 1, 0, priority: priority?.value, isActive: isActive)
     }
 
-    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Relation, _ view2: AnyObject, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) {
+    convenience init<T: SingleAttribute>(_ view: AnyObject, _ attr1: T, _ relation: Alto.Relation, _ view2: AnyObject, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) {
         self.init(view, attr1.nsAttribute, relation.nsRelation, view2, attr2.attribute.nsAttribute, attr2.multiplier, attr2.offset, priority: priority?.value, isActive: isActive)
     }
 
     // MARK: DoubleAttribute
 
-    static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
+    static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Alto.Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return [
             NSLayoutConstraint(view1, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, c, priority: priority?.value, isActive: isActive),
             NSLayoutConstraint(view1, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, c, priority: priority?.value, isActive: isActive)
         ]
     }
 
-    static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
+    static func create<T: DoubleAttribute>(_ view1: UIView, _ attr1: T, _ relation: Alto.Relation, _ view2: UIView, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return create(view1, attr1, relation, view2, attr2.attribute, attr2.multiplier, attr2.offset, priority: priority, isActive: isActive)
     }
 
     // MARK: QuadrupleAttribute
 
-    static func create<T: QuadrupleAttribute>(_ view: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
+    static func create<T: QuadrupleAttribute>(_ view: UIView, _ attr1: T, _ relation: Alto.Relation, _ view2: UIView, _ attr2: T, _ m: CGFloat = 1, _ c: CGFloat = 0, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return [
             NSLayoutConstraint(view, attr1.nsAttributes.0, relation.nsRelation, view2, attr2.nsAttributes.0, m, -c, priority: priority?.value, isActive: isActive),
             NSLayoutConstraint(view, attr1.nsAttributes.1, relation.nsRelation, view2, attr2.nsAttributes.1, m, -c, priority: priority?.value, isActive: isActive),
@@ -176,7 +176,7 @@ extension NSLayoutConstraint {
         ]
     }
 
-    static func create<T: QuadrupleAttribute>(_ view: UIView, _ attr1: T, _ relation: Relation, _ view2: UIView, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
+    static func create<T: QuadrupleAttribute>(_ view: UIView, _ attr1: T, _ relation: Alto.Relation, _ view2: UIView, _ attr2: MultiplierOffset<T>, priority: Priority?, isActive: Bool) -> [NSLayoutConstraint] {
         return create(view, attr1, relation, view2, attr2.attribute, attr2.multiplier, attr2.offset, priority: priority, isActive: isActive)
     }
 }

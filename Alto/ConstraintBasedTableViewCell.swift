@@ -5,7 +5,7 @@ open class ConstraintBasedTableViewCell: UITableViewCell {
     open var boundObjectId: String?
     open var hasInitConstraints = false
 
-    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initView()
     }

@@ -6,7 +6,7 @@ public enum AlignmentEdges {
 
 extension AlignmentEdges: DoubleAttribute {
 
-    var nsAttributes: (NSLayoutAttribute, NSLayoutAttribute) {
+    var nsAttributes: (NSLayoutConstraint.Attribute, NSLayoutConstraint.Attribute) {
         switch self {
         case .horizontalEdges:
             return (.top, .bottom)

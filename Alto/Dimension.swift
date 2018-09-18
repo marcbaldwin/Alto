@@ -6,7 +6,7 @@ public enum Dimension {
 
 extension Dimension: SingleOffset, SingleAttribute {
 
-    var nsAttribute: NSLayoutAttribute {
+    var nsAttribute: NSLayoutConstraint.Attribute {
         switch self {
         case .width: return .width
         case .height: return .height

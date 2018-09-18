@@ -6,7 +6,7 @@ public enum Vertical {
 
 extension Vertical: SingleOffset, SingleAttribute {
 
-    var nsAttribute: NSLayoutAttribute {
+    var nsAttribute: NSLayoutConstraint.Attribute {
         switch self {
         case .centerY: return .centerY
         case .top: return .top
