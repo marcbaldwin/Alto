@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Alto"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.license      = "MIT"
   s.summary      = "Create adaptive layouts with an expressive yet concise syntax."
   s.homepage     = "https://github.com/marcbaldwin/Alto"
