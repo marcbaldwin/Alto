@@ -10,6 +10,7 @@
 		49353CE220CDC9C100B7B2E6 /* AlignmentEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE120CDC9C100B7B2E6 /* AlignmentEdges.swift */; };
 		49353CE420CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE320CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift */; };
 		49353CE620CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49353CE520CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift */; };
+		495A6D8621B34B1200E2E8D9 /* ConstraintBasedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A6D8521B34B1200E2E8D9 /* ConstraintBasedStackView.swift */; };
 		A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */; };
 		A02C05B31E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */; };
 		A02C05B41E9D5FD9006F36D3 /* ConstraintBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */; };
@@ -43,6 +44,7 @@
 		49353CE120CDC9C100B7B2E6 /* AlignmentEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentEdges.swift; sourceTree = "<group>"; };
 		49353CE320CDCBBB00B7B2E6 /* AlignmentEdgesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentEdgesTests.swift; sourceTree = "<group>"; };
 		49353CE520CDCD1400B7B2E6 /* NSLayoutConstraint+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Testing.swift"; sourceTree = "<group>"; };
+		495A6D8521B34B1200E2E8D9 /* ConstraintBasedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintBasedStackView.swift; sourceTree = "<group>"; };
 		A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedTableViewCell.swift; sourceTree = "<group>"; };
 		A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintBasedView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				A02C05AF1E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift */,
+				495A6D8521B34B1200E2E8D9 /* ConstraintBasedStackView.swift */,
 				A02C05B01E9D5FD9006F36D3 /* ConstraintBasedTableViewCell.swift */,
 				A02C05B11E9D5FD9006F36D3 /* ConstraintBasedView.swift */,
 			);
@@ -289,6 +292,7 @@
 				A02C05B21E9D5FD9006F36D3 /* ConstraintBasedCollectionViewCell.swift in Sources */,
 				A0C025F31E60E5B8004A0F48 /* AspectRatio.swift in Sources */,
 				A0C025E61E60E075004A0F48 /* Vertical.swift in Sources */,
+				495A6D8621B34B1200E2E8D9 /* ConstraintBasedStackView.swift in Sources */,
 				A02C05B41E9D5FD9006F36D3 /* ConstraintBasedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
