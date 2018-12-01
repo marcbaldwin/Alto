@@ -1,7 +1,7 @@
 import UIKit
 
 @available(iOS 9.0, *)
-open class StackView: UIStackView {
+open class ConstraintBasedStackView: UIStackView {
 
     open var hasInitConstraints = false
 
