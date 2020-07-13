@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "Alto"
-  s.version      = "1.2.1"
-  s.license      = "MIT"
+  s.version      = "1.2.2"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.summary      = "Create adaptive layouts with an expressive yet concise syntax."
   s.homepage     = "https://github.com/marcbaldwin/Alto"
   s.author       = { "marcbaldwin" => "marc.baldwin88@gmail.com" }
@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source_files = "Alto/*.swift"
   s.platform     = :ios, '8.0'
   s.frameworks   = "Foundation", "UIKit"
-  s.requires_arc = true
+  s.swift_version = '5.0'
 end
