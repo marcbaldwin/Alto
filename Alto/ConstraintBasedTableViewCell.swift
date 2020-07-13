@@ -5,6 +5,10 @@ open class ConstraintBasedTableViewCell: UITableViewCell {
     open var boundObjectId: String?
     open var hasInitConstraints = false
 
+    open var initialSubviews: [UIView] {
+        return []
+    }
+
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initView()
@@ -24,16 +28,14 @@ open class ConstraintBasedTableViewCell: UITableViewCell {
     }
 
     open func initView() {
-        initialSubviews().forEach { view in
-            addSubview(view)
+        initialSubviews.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(view)
         }
         setNeedsUpdateConstraints()
     }
 
     open func initConstraints() { }
-
-    open func initialSubviews() -> [UIView] { return [UIView]() }
 }
 
 open class ViewHolderTableViewCell: ConstraintBasedTableViewCell {
@@ -42,7 +44,7 @@ open class ViewHolderTableViewCell: ConstraintBasedTableViewCell {
         fatalError("subview is abstract")
     }
 
-    override open func initialSubviews() -> [UIView] {
+    override open var initialSubviews: [UIView] {
         return [subview()]
     }
 

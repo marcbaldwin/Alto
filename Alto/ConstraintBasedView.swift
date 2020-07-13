@@ -4,6 +4,10 @@ open class ConstraintBasedView: UIView {
     
     open var hasInitConstraints = false
 
+    open var initialSubviews: [UIView] {
+        return []
+    }
+
     public init() {
         super.init(frame: .zero)
         initViewIfRequired()
@@ -36,7 +40,7 @@ open class ConstraintBasedView: UIView {
     }
 
     open func initView() {
-        initialSubviews().forEach { view in
+        initialSubviews.forEach { view in
             addSubview(view)
             view.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -44,8 +48,6 @@ open class ConstraintBasedView: UIView {
     }
 
     open func initConstraints() { }
-
-    open func initialSubviews() -> [UIView] { return [UIView]() }
 
     private func initViewIfRequired() {
         if initViewInInit() {
