@@ -19,7 +19,7 @@ extension Stack: DoubleAttribute {
 public extension Array where Element: UIView {
 
     @discardableResult
-    public func stack(_ attribute: Stack, in view: UIView? = nil, margin: CGFloat = 0, containerMargin: CGFloat = 0, isActive: Bool = true) -> [NSLayoutConstraint] {
+    func stack(_ attribute: Stack, in view: UIView? = nil, margin: CGFloat = 0, containerMargin: CGFloat = 0, isActive: Bool = true) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         let attributes = attribute.nsAttributes
 

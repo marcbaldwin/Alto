@@ -19,7 +19,7 @@ extension AlignmentEdges: DoubleAttribute {
 public extension UIView {
 
     @discardableResult
-    public func align(_ edges: AlignmentEdges, to view: UIView, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+    func align(_ edges: AlignmentEdges, to view: UIView, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
         return NSLayoutConstraint.create(self, edges, .equalTo, view, edges, priority: priority, isActive: isActive)
     }
 }
@@ -27,7 +27,7 @@ public extension UIView {
 public extension Array where Element: UIView {
 
     @discardableResult
-    public func align(_ edges: AlignmentEdges, to view: UIView, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
+    func align(_ edges: AlignmentEdges, to view: UIView, priority: Priority? = nil, isActive: Bool = true) -> [NSLayoutConstraint] {
         return flatMap { $0.align(edges, to: view, priority: priority, isActive: isActive) }
     }
 }
