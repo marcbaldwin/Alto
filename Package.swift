@@ -11,10 +11,12 @@ let package = Package(
   targets: [
     .target(
       name: "Alto",
+      path: "Alto",
       exclude: ["Info.plist"]
     ),
     .testTarget(
       name: "AltoTests",
+      path: "AltoTests",
       dependencies: ["Alto"],
       exclude: ["Info.plist"]
     )
