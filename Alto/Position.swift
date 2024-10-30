@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public enum Position {
     case center, topLeft, topRight, bottomLeft, bottomRight,

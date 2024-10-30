@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public enum Stack {
     case vertically, verticallyToBaseline, horizontally, leadingToTrailing

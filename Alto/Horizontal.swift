@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public enum Horizontal {
     case centerX, left, right, leading, trailing
