@@ -16,8 +16,8 @@ let package = Package(
     ),
     .testTarget(
       name: "AltoTests",
-      path: "AltoTests",
       dependencies: ["Alto"],
+      path: "AltoTests",
       exclude: ["Info.plist"]
     )
   ],
