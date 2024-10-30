@@ -4,22 +4,20 @@ import PackageDescription
 
 let package = Package(
   name: "Alto",
-  platforms: [.macOS(.v10_13),
-              .iOS(.v12),
-              .tvOS(.v12),
-              .watchOS(.v4)],
+  platforms: [.iOS(.v12)],
   products: [
-      .library(name: "Alto", targets: ["Alto"]),
+      .library(name: "Alto", targets: ["Alto"])
   ],
-  targets: [.target(name: "Alto",
-                    path: "Alto",
-                    exclude: ["Info.plist"],
-                    swiftSettings: [.enableUpcomingFeature("ExistentialAny")]
-                    ),
-            .testTarget(name: "AltoTests",
-                        dependencies: ["Alto"],
-                        path: "Tests",
-                        exclude: ["Info.plist"],
-                        )
+  targets: [
+    .target(
+      name: "Alto",
+      exclude: ["Info.plist"]
+    ),
+    .testTarget(
+      name: "AltoTests",
+      dependencies: ["Alto"],
+      exclude: ["Info.plist"]
+    )
   ],
-  swiftLanguageModes: [.v5])
+  swiftLanguageModes: [.v5]
+)
