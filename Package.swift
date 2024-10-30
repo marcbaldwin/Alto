@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "Alamofire",
+  name: "Alto",
   platforms: [.macOS(.v10_13),
               .iOS(.v12),
               .tvOS(.v12),
